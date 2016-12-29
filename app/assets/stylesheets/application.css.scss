@@ -19,7 +19,7 @@
 h1, h2, h3 {
   font-family: 'Open Sans', sans-serif;
 }
-body, .navbar {
+.navbar, .home-callout {
   background: #00c6ff; /* fallback for old browsers */
 background: -webkit-gradient(linear, 0 0, 100% 0, from(#00c6ff), to(#0072ff));
 background: -webkit-linear-gradient(to left, #00c6ff, #0072ff);
@@ -29,4 +29,11 @@ background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 
 }
 .navbar {
   border: none;
+}
+
+.home-callout {
+  color: white;
+  margin-top: -20px; //remove margin above the <h1>
+  padding-top: 50px; 
+  padding-bottom: 100px;
 }
