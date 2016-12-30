@@ -13,12 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
- 
+
+// Typography Styles 
 h1, h2, h3 {
   font-family: 'Open Sans', sans-serif;
 }
+
+// Typography Styles
 .navbar, .home-callout {
   background: #00c6ff; /* fallback for old browsers */
 background: -webkit-gradient(linear, 0 0, 100% 0, from(#00c6ff), to(#0072ff));
@@ -27,27 +31,25 @@ background: -moz-linear-gradient(to left, #00c6ff, #0072ff);
 background: -o-linear-gradient(to left, #00c6ff, #0072ff);
 background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+// Nav Styles
 .navbar {
   border: none;
 }
-
-.home-callout {
-  color: white;
-  margin-top: -20px; //remove margin above the <h1>
-  padding-top: 50px; 
-  padding-bottom: 100px;
-}
-.navbar-default .navbar-brand {
-  color: white;
-}
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
   color: white;
+  &:hover {
+    color: white;
+    opacity: 0.75;
+  }
 }
-.navbar-default .navbar-brand:hover {
+
+// Home Page Styles
+.home-callout {
   color: white;
-  opacity: 0.75;
+  margin-top: -20px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
-.navbar-default .navbar-nav > li > a:hover {
-  color: white;
-  opacity: 0.75;
-}
+
