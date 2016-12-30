@@ -60,3 +60,12 @@ background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
 }
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar-default .navbar-toggle {
+  border: 2px solid white;
+  &:hover, &:focus {
+    background-color: #00c6ff;
+  }
+}
