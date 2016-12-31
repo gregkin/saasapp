@@ -28,11 +28,11 @@ h1, h2, h3 {
 // Typography Styles
 .navbar, .home-callout {
   background: #00c6ff; /* fallback for old browsers */
-background: -webkit-gradient(linear, 0 0, 100% 0, from(#00c6ff), to(#0072ff));
-background: -webkit-linear-gradient(to left, #00c6ff, #0072ff);
-background: -moz-linear-gradient(to left, #00c6ff, #0072ff);
-background: -o-linear-gradient(to left, #00c6ff, #0072ff);
-background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#00c6ff), to(#0072ff));
+  background: -webkit-linear-gradient(to left, #00c6ff, #0072ff);
+  background: -moz-linear-gradient(to left, #00c6ff, #0072ff);
+  background: -o-linear-gradient(to left, #00c6ff, #0072ff);
+  background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 // Nav Styles
@@ -68,4 +68,12 @@ background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 
   &:hover, &:focus {
     background-color: #00c6ff;
   }
+}
+.contact_well {
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#00c6ff), to(#0072ff));
+  background: -webkit-linear-gradient(to left, #00c6ff, #0072ff);
+  background: -moz-linear-gradient(to left, #00c6ff, #0072ff);
+  background: -o-linear-gradient(to left, #00c6ff, #0072ff);
+  background: linear-gradient(to left, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
