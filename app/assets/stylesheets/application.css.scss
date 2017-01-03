@@ -69,10 +69,10 @@ h1, h2, h3 {
     background-color: #00c6ff;
   }
 }
-.contact_well {
+.contact_well, .user_well {
   -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
-background: #02AAB0; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #02AAB0 , #00CDAC); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #02AAB0 , #00CDAC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: #ECE9E6; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
