@@ -82,3 +82,9 @@ h1, h2, h3 {
   background: -webkit-linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
   background: linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
 }
+.basic_well, .pro_well {
+  background: -webkit-linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
+  background: linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
+  color: white;
+  border-radius: 15px;
+}
