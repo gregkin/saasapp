@@ -58,6 +58,9 @@ h1, h2, h3 {
 .alert-notice {
   display: none;
 }
+.home-signup-links {
+  margin-top: 30px;
+}
 
 .navbar-brand {
   font-family: 'Open Sans', sans-serif;
@@ -72,10 +75,10 @@ h1, h2, h3 {
     background-color: #00c6ff;
   }
 }
-.contact_well, .user_well {
+
+.blend-gradient {
   -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
-background: #ECE9E6; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
+  background: linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
 }
