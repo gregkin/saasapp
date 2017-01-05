@@ -1,41 +1,60 @@
 /* global $, Stripe */
-// 1. Document Ready
-$(document).on('turbolinks.load', function(){c
-  var theForm = $('#pro_form'); // Giving the Pro Form and variable name theForm by referencing the id we gave it. #pro_form CSS   
+// 1. Document ready.
+$(document).on('turbolinks:load', function(){
+  var theForm = $('#pro_form');
   var submitBtn = $('#form-submit-btn');
-  
-  // 2. Set Stripe Public Key
-  Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );)
-  
-    // 3. When User Clicks the Form Submit Btn.  
-    submitBtn.click(function(event){
-      
-    // 4. Prevent Default Submission Behavior. We are holding off on Sending information to Stripe
-      event.preventDefault();
-      
-    // 5. Collect the Credit Card Fields (Remember we are identifying the fields with the # - ids CSS)
-      var ccNum    = $('#card_number').val(),
-          cvcNum   = $('#card_code').val(),
-          expMonth = $('#card_month').val(),
-          expYear  = $('#card_year').val();
-          
-    // 6. Send the Card Information on to Stripe.
+  // 2. Set Stripe public key.
+  Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );
+  // 3. When user clicks form submit btn,
+  submitBtn.click(function(event){
+    // 4. Prevent default submission behavior.
+    event.preventDefault();
+    submitBtn.val("Processing").prop('disabled', true);
     
-      Stripe.createToken({  // Creating the Object function for the fields {()}
-      number: ccNum,
-      cvc: cvcNum,
-      exp_month: expMonth,
-      exp_year: expYear
-    }, stripeResponseHandler); // stripeResponseHandler is the Callback Function
+    // 5. Collect the credit card fields. 
+    
+    var ccNum = $('#card_number').val(),
+        cvcNum = $('#card_code').val(),
+        expMonth = $('#card_month').val(),
+        expYear = $('#card_year').val();
+    // 6. Use Stripe JS library to check for card errors.
+    var error = false;
+    //Validate card number.
+    if(!Stripe.card.validateCardNumber(ccNum)) {
+      error = true;
+      alert('The credit card number appears to be invalid');
+    }
+    //Validate CVC number.
+    if(!Stripe.card.validateCVC(cvcNum)) {
+      error = true;
+      alert('The CVC number appears to be invalid');
+    }
+    //Validate expiration date.
+    if(!Stripe.card.validateExpiry(expMonth, expYear)) {
+      error = true;
+      alert('The expiration date appears to be invalid');
+    }
+    if (error) {
+      //If there are card errors, don't send to Stripe.
+      submitBtn.prop('disabled', false).val("Sign Up");
+    } else {
+      // 7.  Send the card info to Stripe.
+      Stripe.createToken({
+        number: ccNum,
+        cvc: cvcNum,
+        exp_month: expMonth,
+        exp_year: expYear
+      }, stripeResponseHandler);
+    }
+    return false;
   });
-  
-  });
-    // 7. Stripe will Return back with a Card Token
-    
-    // 8. Inject Card Token as Hidden Field into the Form.
-    
-    // 9. Submit Form to the Rails Application. 
-
-)};
-
-
+  // 8 .Stripe will return a card token.
+  function stripeResponseHandler(status, response) {
+    //Get the token from the response.
+    var token = response.id;
+    // 9. Inject the card token in a hidden field.
+    theForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token) );
+    // 10. Submit form to our Rails app.
+    theForm.get(0).submit();
+  }
+});
