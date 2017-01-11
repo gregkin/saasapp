@@ -14,7 +14,7 @@ def create
     @profile = @user.build_profile( profile_params)
   if @profile.save
       flash[:success] = "Profile Updated!"
-      redirect_to user_path( params[:user_id] )
+      redirect_to user_path(id: params[:user_id] )
     else
       render action: :new
   end
@@ -26,9 +26,24 @@ end
     @profile = @user.profile
   end
   
+  # PATCH / to /users/:user_id/profile
+  def update
+    # Retrieve the User fron the Database
+    @user = User.find( params[:user_id] )
+    # Retrieve that Users Profile
+    @profile = @user.profile
+    # Mass Assign Edited Profile Attributes and Save (Update)
+    if @profile.update.attributes(profile_params)
+      flash[:success] = "Profile Updated!"
+      # Redirect user to thier Profile Page
+    redirect_to user_path( params[:user_id] )
+  else
+    render action: :edit
+    end
+    
   private
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :avatar, :job_title, :phone_number, :contact_email, :description)
     end
-end
-  
+  end
+end  
