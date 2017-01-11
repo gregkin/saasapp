@@ -28,3 +28,20 @@
   background-color: #5bc0de;
   border-color: #46b8da;
 }
+// Index Page Styles
+.user-index-avatar {
+  width: 128px;
+  height: 128px;
+}
+.well.white-bg {
+  background-color: white;
+}
+.well.blend-gradient-green{
+  -webkit-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
+  -moz-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
+  background: -webkit-linear-gradient(3deg, rgb(251, 255, 255), rgb(8, 160, 115));
+  background: linear-gradient(3deg, rgb(251, 255, 255), rgb(8, 160, 115));
+  h2 {
+    color:white;
+  }
+}

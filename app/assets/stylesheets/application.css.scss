@@ -90,6 +90,9 @@ h1, h2, h3 {
   -moz-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.85);
   background: -webkit-linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
   background: linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
+  h2 {
+    color:white;
+  }
 }
 .basic_well, .pro_well {
   background: -webkit-linear-gradient(3deg, rgb(244, 247, 249), rgb(38, 135, 233));
